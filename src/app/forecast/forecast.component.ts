@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { WeatherService } from '../weather.service'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/do'
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'forecast',
@@ -36,15 +37,33 @@ export class ForecastComponent implements OnInit {
     }
   }
 
-  getForecast() {
-    this.forecast = this.weather.getForecastByLatLon(this.lat, this.lon)
-      .do(data => console.log(data))
-  }
-
-  onEnter(value: string) {
+  getForecast(value: string) {
     this.city = value
-    this.forecast = this.weather.getForecastByCity(this.city)
-      .do(data => console.log(data))
+
+    console.log(this.city)
+    
+    if (this.city !== undefined && this.city !== '') {
+      this.forecast = this.weather.getForecastByCity(this.city)
+        .do(data => console.log(data))
+    } else {
+      this.forecast = this.weather.getForecastByLatLon(this.lat, this.lon)
+        .do(data => console.log(data))
+    }
+      //.pipe(
+      /*
+      .select(val => {
+          return val.list.map(
+            v => {
+              return {
+                temp: Math.round((v.main.temp - 273) * 10) / 10
+                date: v.dt_txt
+                description: v.weather[0].description
+              }
+            }
+          )
+        }
+      )
+      */
   }
 
   /// Helper to make weather icons work

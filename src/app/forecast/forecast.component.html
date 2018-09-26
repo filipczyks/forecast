@@ -1,9 +1,9 @@
 <p>{{ lat }} / {{ lon }} </p>
 
 <label>City:</label>
-<input type="text" name="city" #city (keyup.enter)="onEnter(city.value)" />
+<input type="text" name="city" #city (keyup.enter)="getForecast(city.value)" />
 
-<button (click)="getForecast()">Get Forecast</button>
+<button (click)="getForecast(city.value)">Get Forecast</button>
 
 <table *ngIf="forecast | async as f" >
   <tr>
