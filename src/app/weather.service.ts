@@ -15,7 +15,7 @@ export class WeatherService {
     return this.http.get(this.buildUrl('q=' + city))
   }
 
-  getForecastByLatLon(lat: string, lon: string): Observable<any> {
+  getForecastByLatLon(lat: number, lon: number): Observable<any> {
     return this.http.get(this.buildUrl('lat=' + lat + '&lon=' + lon))
   }
 
