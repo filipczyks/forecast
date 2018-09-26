@@ -1,0 +1,19 @@
+<p>{{ lat }} / {{ lon }} </p>
+
+<label>City:</label>
+<input type="text" name="city" #city (keyup.enter)="onEnter(city.value)" />
+
+<button (click)="getForecast()">Get Forecast</button>
+
+<table *ngIf="forecast | async as f" >
+  <tr>
+    <th>Date</th>
+    <th>Temp</th>
+    <th>Weather</th>
+  </tr>
+  <tr *ngFor="let item of f.list">
+    <td>{{item.dt_txt}}</td>
+    <td>{{item.main.temp}}</td>
+    <td>{{item.weather[0].description}}</td>
+  </tr>
+</table>
