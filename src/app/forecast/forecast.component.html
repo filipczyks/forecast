@@ -13,7 +13,9 @@
   </tr>
   <tr *ngFor="let item of f.list">
     <td>{{item.dt_txt}}</td>
-    <td>{{item.main.temp}}</td>
-    <td>{{item.weather[0].description}}</td>
+    <td>{{(item.main.temp-273).toFixed(1)}}</td>
+    <td>
+      <img src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png" alt="{{item.weather[0].description}}" />
+    </td>
   </tr>
 </table>
