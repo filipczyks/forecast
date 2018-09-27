@@ -13,7 +13,15 @@ export class WeatherCardComponent implements OnInit {
       {
         icon: ''
       }
-    ]
+    ],
+    dt_txt: '',
+    main: {
+      humidity: '',
+      temp: 0
+    },
+    wind: {
+      speed: ''
+    }
   };
 
   constructor() { }
