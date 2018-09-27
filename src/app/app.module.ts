@@ -5,15 +5,24 @@ import { AppComponent } from './app.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './weather.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule, MatChipsModule, MatDividerModule, MatInputModule } from '@angular/material';
+import { CardComponent } from './forecast/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ForecastComponent
+    ForecastComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatInputModule,
+    MatChipsModule,
+    MatDividerModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

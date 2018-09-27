@@ -5,6 +5,11 @@
 
 <button (click)="getForecast(city.value)">Get Forecast</button>
 
+<div *ngIf="forecast | async as f">
+  <app-card *ngFor="let item of f.list" [item]="item"></app-card>
+</div>
+
+
 <table *ngIf="forecast | async as f" >
   <tr>
     <th>Date</th>
