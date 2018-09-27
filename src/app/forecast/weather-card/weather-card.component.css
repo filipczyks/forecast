@@ -1,11 +1,11 @@
 mat-card {
   float: left;
-  width: 120px;
+  width: 100px;
   margin: 5px;
 }
 
 .temperature {
-  font-size: 32px;
+  font-size: 36px;
 }
 
 mat-divider {

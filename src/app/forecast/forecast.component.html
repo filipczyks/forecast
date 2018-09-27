@@ -1,26 +1,18 @@
-<p>{{ lat }} / {{ lon }} </p>
+<p>
+  <mat-chip>{{ lat }}</mat-chip> / <mat-chip>{{ lon }}</mat-chip>
+</p>
 
-<label>City:</label>
-<input type="text" name="city" #city (keyup.enter)="getForecast(city.value)" />
+<p>
+  <mat-form-field appearance="outline" class="city">
+    <mat-label>City:</mat-label>
+    <input matInput type="text" name="city" #city (keyup.enter)="getForecast(city.value)" />
+    <mat-hint>Leave empty to use your current location</mat-hint>
+  </mat-form-field>
 
-<button (click)="getForecast(city.value)">Get Forecast</button>
+  <button (click)="getForecast(city.value)">Get Forecast</button>
+</p>
 
+<app-day-card  *ngIf="forecast | async as f" text="{{f.list[0].dt_txt.split(' ')[0]}}"></app-day-card>
 <div *ngIf="forecast | async as f">
   <app-card *ngFor="let item of f.list" [item]="item"></app-card>
 </div>
-
-
-<table *ngIf="forecast | async as f" >
-  <tr>
-    <th>Date</th>
-    <th>Temp</th>
-    <th>Weather</th>
-  </tr>
-  <tr *ngFor="let item of f.list">
-    <td>{{item.dt_txt}}</td>
-    <td>{{(item.main.temp-273).toFixed(1)}}</td>
-    <td>
-      <img src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png" alt="{{item.weather[0].description}}" />
-    </td>
-  </tr>
-</table>

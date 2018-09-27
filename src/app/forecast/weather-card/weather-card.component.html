@@ -1,8 +1,7 @@
-<mat-card *ngIf="item.dt_txt.split(' ')[1] == '00:00:00'" card class="day">
-  <mat-card-content>
-    {{item.dt_txt.split(' ')[0]}}
-  </mat-card-content>
-</mat-card>
+<app-day-card
+  *ngIf="item.dt_txt.split(' ')[1] == '00:00:00'"
+  text="{{item.dt_txt.split(' ')[0]}}">
+</app-day-card>
 
 <mat-card class="weather">
   <mat-card-header>

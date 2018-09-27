@@ -6,14 +6,16 @@ import { ForecastComponent } from './forecast/forecast.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './weather.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatChipsModule, MatDividerModule, MatInputModule } from '@angular/material';
-import { CardComponent } from './forecast/card/card.component';
+import { MatCardModule, MatChipsModule, MatDividerModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { WeatherCardComponent } from './forecast/weather-card/weather-card.component';
+import { DayCardComponent } from './forecast/day-card/day-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ForecastComponent,
-    CardComponent
+    WeatherCardComponent,
+    DayCardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { CardComponent } from './forecast/card/card.component';
     MatCardModule,
     MatInputModule,
     MatChipsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatFormFieldModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

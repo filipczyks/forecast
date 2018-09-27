@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  templateUrl: './weather-card.component.html',
+  styleUrls: ['./weather-card.component.css']
 })
-export class CardComponent implements OnInit {
+export class WeatherCardComponent implements OnInit {
 
   @Input()
   item: {

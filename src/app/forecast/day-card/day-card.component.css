@@ -1,0 +1,14 @@
+mat-card {
+  float: left;
+  width: 100px;
+  margin: 5px;
+}
+
+mat-card.day {
+  background: midnightblue;
+  color: white;
+}
+
+mat-card.day mat-card-content {
+  font-size: 18px;
+}
