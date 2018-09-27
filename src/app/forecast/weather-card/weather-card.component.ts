@@ -6,9 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./weather-card.component.css']
 })
 export class WeatherCardComponent implements OnInit {
-
-  @Input()
-  item: {
+  ITEM = {
     weather: [
       {
         icon: ''
@@ -24,10 +22,14 @@ export class WeatherCardComponent implements OnInit {
     }
   };
 
-  constructor() { }
+  @Input()
+  item = this.ITEM;
+
+  constructor() {
+    this.item = this.ITEM;
+  }
 
   ngOnInit() {
-
   }
 
 }

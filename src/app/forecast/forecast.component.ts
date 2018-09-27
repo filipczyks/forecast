@@ -48,7 +48,6 @@ export class ForecastComponent implements OnInit {
       this.forecast = this.weather.getForecastByLatLon(this.lat, this.lon)
         .do(data => console.log(data));
     }
-    //.pipe(
     /*
     .select(val => {
         return val.list.map(

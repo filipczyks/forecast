@@ -27,6 +27,10 @@ import { DayCardComponent } from './forecast/day-card/day-card.component';
     MatDividerModule,
     MatFormFieldModule
   ],
+  exports: [
+    WeatherCardComponent,
+    DayCardComponent
+  ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
 })
