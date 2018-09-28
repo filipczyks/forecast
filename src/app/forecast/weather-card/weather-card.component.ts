@@ -7,19 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class WeatherCardComponent implements OnInit {
   ITEM = {
-    weather: [
-      {
-        icon: ''
-      }
-    ],
-    dt_txt: '',
-    main: {
-      humidity: '',
-      temp: 0
-    },
-    wind: {
-      speed: ''
-    }
+    temp: 0,
+    humidity: 0,
+    wind: 0,
+    date: '',
+    time: '',
+    icon: ''
   };
 
   @Input()

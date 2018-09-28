@@ -1,28 +1,28 @@
 <app-day-card
-  *ngIf="item.dt_txt.split(' ')[1] == '00:00:00'"
-  text="{{item.dt_txt.split(' ')[0]}}">
+  *ngIf="item.time == '00:00:00'"
+  text="{{item.date}}">
 </app-day-card>
 
 <mat-card class="weather">
   <mat-card-header>
     <div mat-card-avatar class="weather-header-image">
-      <img src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png">
+      <img src="http://openweathermap.org/img/w/{{item.icon}}.png">
     </div>
     <mat-card-title> </mat-card-title>
-    <mat-card-subtitle>{{item.dt_txt.split(" ")[1]}}</mat-card-subtitle>
+    <mat-card-subtitle>{{item.time}}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
     <span class="temperature">
-      {{(item.main.temp-273).toFixed(1)}}&#176;C
+      {{(item.temp).toFixed(1)}}&#176;C
     </span>
   </mat-card-content>
   <mat-card-actions>
     <mat-chip-list>
-      <mat-chip>humidity: {{item.main.humidity}}%</mat-chip>
-      <mat-chip>wind: {{item.wind.speed}} m/s</mat-chip>
+      <mat-chip>humidity: {{item.humidity}}%</mat-chip>
+      <mat-chip>wind: {{item.wind}} m/s</mat-chip>
     </mat-chip-list>
   </mat-card-actions>
 </mat-card>
 
-<mat-divider *ngIf="item.dt_txt.split(' ')[1] == '21:00:00'"></mat-divider>
+<mat-divider *ngIf="item.time == '21:00:00'"></mat-divider>

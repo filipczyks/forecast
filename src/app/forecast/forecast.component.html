@@ -12,7 +12,7 @@
   <button (click)="getForecast(city.value)">Get Forecast</button>
 </p>
 
-<app-day-card  *ngIf="forecast | async as f" text="{{f.list[0].dt_txt.split(' ')[0]}}"></app-day-card>
+<app-day-card  *ngIf="forecast | async as f" text="{{f[0].date}}"></app-day-card>
 <div *ngIf="forecast | async as f">
-  <app-card *ngFor="let item of f.list" [item]="item"></app-card>
+  <app-card *ngFor="let item of f" [item]="item"></app-card>
 </div>

@@ -26,10 +26,6 @@ export class ForecastComponent implements OnInit {
           const c = position.coords;
           this.lat = c.latitude;
           this.lon = c.longitude;
-
-          console.log(this.lat);
-          console.log(this.lon);
-
           this.getForecast('');
         }
       );
@@ -48,35 +44,5 @@ export class ForecastComponent implements OnInit {
       this.forecast = this.weather.getForecastByLatLon(this.lat, this.lon)
         .do(data => console.log(data));
     }
-    /*
-    .select(val => {
-        return val.list.map(
-          v => {
-            return {
-              temp: Math.round((v.main.temp - 273) * 10) / 10
-              date: v.dt_txt
-              description: v.weather[0].description
-            }
-          }
-        )
-      }
-    )
-    */
   }
-
-  /// Helper to make weather icons work
-  /// better solution is to map icons to an object
-  weatherIcon(icon) {
-    switch (icon) {
-      case 'partly-cloudy-day':
-        return 'wi wi-day-cloudy';
-      case 'clear-day':
-        return 'wi wi-day-sunny';
-      case 'partly-cloudy-night':
-        return 'wi wi-night-partly-cloudy';
-      default:
-        return `wi wi-day-sunny`;
-    }
-  }
-
 }
