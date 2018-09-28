@@ -4,17 +4,12 @@ import { WeatherService } from './weather.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('WeatherService', () => {
-
-  let httpMock: any;
-
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      declarations: [WeatherService]
-    }).compileComponents();
-
-    httpMock = TestBed.get(HttpTestingController);
-  }
+      TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule],
+        providers: [WeatherService]
+      }).compileComponents();
+    }
   );
 
   it('should be created', () => {
