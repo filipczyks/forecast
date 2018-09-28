@@ -6,7 +6,7 @@ import { ForecastComponent } from './forecast/forecast.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './weather.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatChipsModule, MatDividerModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatDividerModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { WeatherCardComponent } from './forecast/weather-card/weather-card.component';
 import { DayCardComponent } from './forecast/day-card/day-card.component';
 
@@ -25,7 +25,8 @@ import { DayCardComponent } from './forecast/day-card/day-card.component';
     MatInputModule,
     MatChipsModule,
     MatDividerModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule
   ],
   exports: [
     WeatherCardComponent,

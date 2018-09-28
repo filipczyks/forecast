@@ -35,14 +35,10 @@ export class ForecastComponent implements OnInit {
   getForecast(value: string) {
     this.city = value;
 
-    console.log(this.city);
-
     if (this.city !== undefined && this.city !== '') {
-      this.forecast = this.weather.getForecastByCity(this.city)
-        .do(data => console.log(data));
+      this.forecast = this.weather.getForecastByCity(this.city);
     } else {
-      this.forecast = this.weather.getForecastByLatLon(this.lat, this.lon)
-        .do(data => console.log(data));
+      this.forecast = this.weather.getForecastByLatLon(this.lat, this.lon);
     }
   }
 }

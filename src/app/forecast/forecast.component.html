@@ -9,7 +9,7 @@
     <mat-hint>Leave empty to use your current location</mat-hint>
   </mat-form-field>
 
-  <button (click)="getForecast(city.value)">Get Forecast</button>
+  <button mat-button (click)="getForecast(city.value)" color="primary">Get Forecast</button>
 </p>
 
 <app-day-card  *ngIf="forecast | async as f" text="{{f[0].date}}"></app-day-card>
